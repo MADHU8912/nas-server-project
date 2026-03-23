@@ -1,0 +1,11 @@
+services:
+  nas:
+    image: filebrowser/filebrowser:latest
+    container_name: nas-server
+    ports:
+      - "8085:80"
+    volumes:
+      - ./shared-storage:/srv
+      - ./app-data/filebrowser.db:/database/filebrowser.db
+      - ./app-data/settings.json:/config/settings.json
+    restart: unless-stopped
