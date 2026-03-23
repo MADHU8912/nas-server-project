@@ -6,6 +6,6 @@ services:
       - "8085:80"
     volumes:
       - ./shared-storage:/srv
-      - ./app-data/filebrowser.db:/database/filebrowser.db
-      - ./app-data/settings.json:/config/settings.json
+      - ./app-data/database:/database
+      - ./app-data/config:/config
     restart: unless-stopped
